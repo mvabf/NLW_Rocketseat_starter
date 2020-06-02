@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -26,13 +27,3 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--title-color);
 
 }
-
-/* BOX MODEL
-
-Modelo de caixa
-Toda caixa tem:
-largura, altura, espaçamentos, preenchimentos,
-bordas, cor, fundo, maneira que é vista pelo html (display),
-posicionamento, alinhamentos
-*/
-
