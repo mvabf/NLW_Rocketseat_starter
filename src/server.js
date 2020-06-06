@@ -67,17 +67,17 @@ server.post("/savepoint", ( req, res ) => {
 
     db.run(query, values, afterInsertData);
 
-    return res.send("ok");
 });
 
 
 server.get("/search-results", ( req, res ) => {
 
-    const search = req.query.search-results;
+    const search = req.query.search
 
     if (search == "") {
-        return res.render("search-results.html", { places: rows, total});
+        return res.render("search-results.html", { total: 0 })
     }
+    
     
     db.all(`SELECT * FROM places WHERE city LIKE '%${search}%'`, function(err, rows) {
         if (err) {
@@ -86,9 +86,9 @@ server.get("/search-results", ( req, res ) => {
         
         const total = rows.length;
 
-        return res.render("search-results.html", { total: 0 });
-    });    
-});
+        return res.render("search-results.html", { places: rows, total })
+    })
+})
 
 
 
